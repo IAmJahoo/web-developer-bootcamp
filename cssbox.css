@@ -1,0 +1,26 @@
+h1 {
+    font-family: Inconsolata;
+    font-size: 20 px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+table {
+    margin: 40px auto;
+}
+
+.smallbox {
+    height: 150px;
+    width: 150px;
+    
+}
+
+.vert{
+    border-left: solid 2px blue;
+    border-right: solid 2px blue;
+}
+
+.horiz{
+    border-top: solid 2px blue;
+    border-bottom: solid 2px blue;
+}
