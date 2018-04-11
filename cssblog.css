@@ -1,0 +1,37 @@
+body {
+    width: 60%;
+    border: 20px solid #bdc3c7;
+    margin: 20px auto;
+}
+
+h3 {
+    font-family: 'Hi Melody';
+    font-size: 20px;
+    color: #237aa3;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+h1 {
+    font-family: Stylish;
+    color: #043951;
+}
+
+p {
+    width: 70%;
+}
+
+.first_paragraph {
+    border-left: 5px solid #bdc3c7;
+    padding-left: 5px;
+}
+
+.post {
+    margin-left: 20px;
+}
+
+hr { 
+    border: 0;
+    height: 1px; 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+ }
