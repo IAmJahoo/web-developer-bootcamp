@@ -46,7 +46,23 @@ function isUniform(list) {
     return true;
 }
 
+function sumArray(list) {
+    var result=list[0];
+    for (i=1;i<list.length;i++) {
+        result+=list[i];
+    }
+    return result;
+}
 
+function max(list) {
+    maxValue = list[0]
+    for (i=1;i<list.length;i++) {
+        if (maxValue < list[i]){
+            maxValue = list[i];
+        }
+    }
+    return maxValue;
+}
 //          isUniform test
 // console.log(isUniform([1,1,1,1]));
 // console.log(isUniform([1,2,1,1]));
