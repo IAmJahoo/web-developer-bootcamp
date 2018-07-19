@@ -1,0 +1,24 @@
+{
+  "name": "web-developer-bootcamp",
+  "version": "1.0.0",
+  "description": "web-developer-bootcamp",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-config-google": "^0.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IAmJahoo/web-developer-bootcamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IAmJahoo/web-developer-bootcamp/issues"
+  },
+  "homepage": "https://github.com/IAmJahoo/web-developer-bootcamp#readme"
+}
