@@ -43,7 +43,7 @@ let boxesListeners = function(squares) {
                 // and display "Correct!!!""
             } else {
                 alert('WRONG');
-                this.classList.add('faded');
+                this.style.backgroundColor = '#FEFEFE'
                 // if not correct, fade box out and display "Try Again"
             }
         });
