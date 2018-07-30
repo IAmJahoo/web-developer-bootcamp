@@ -1,0 +1,30 @@
+/* @TODO: add mobile friendly grid*/
+
+body {
+    font-family: 'Megrim', cursive;
+    background-color: #FEFEFE;
+    margin:0;
+    text-align: center;
+}
+
+#header {
+    background-color: #2CAAAA;
+    color: #FEF0fe;
+    padding: 10px;
+}
+
+.color-box {
+    width: 30%;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.faded {
+    background-color: #FEFEFE !important;
+}

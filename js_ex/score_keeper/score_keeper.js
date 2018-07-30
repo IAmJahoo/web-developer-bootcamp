@@ -42,7 +42,7 @@ resetButton.addEventListener('click', () => {
     p2result.classList.remove('winner');
 });
 
-numInput.addEventListener('change', () => {
+numInput.addEventListener('input', () => {
     winningScore = Number(this.value);
     scoreForGreen.textContent = this.value;
 });
