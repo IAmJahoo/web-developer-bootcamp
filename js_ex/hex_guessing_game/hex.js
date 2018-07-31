@@ -3,6 +3,14 @@ let gameModeFactor = 6;
 let pickedColor;
 let pickedColorRGB;
 
+let hex2rgb = function(hexColor) {
+    let hexRed = parseInt(hexColor.substr(1, 2), 16);
+    let hexGreen = parseInt(hexColor.substr(3, 2), 16);
+    let hexBlue = parseInt(hexColor.substr(5, 2), 16);
+
+    return 'rgb(' + hexRed + ', ' + hexGreen + ', ' + hexBlue + ')';
+};
+
 let randomHexBaseColor = () => {
     const charTable = [
             '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
@@ -33,18 +41,24 @@ let paintBoxes = (squares) => {
     }
 };
 
+let changeOtherColors = (color) => {
+    for (let i=0; i<gameModeFactor; i++) {
+        boxes[i].style.backgroundColor = color;
+    }
+};
+
 let boxesListeners = function(squares) {
     for (i=0; i<gameModeFactor; i++) {
         squares[i].addEventListener('click', function() {
             let clickedColor = this.style.backgroundColor;
             if (clickedColor === pickedColorRGB) {
-                alert(this.style.backgroundColor);
-                // if correct change all other squares to this color
-                // and display "Correct!!!""
+                changeOtherColors(clickedColor);
+                newColors.textContent = 'Play again?';
+                displayMessage.textContent = 'Correct!!!';
+                header.style.backgroundColor = clickedColor;
             } else {
-                alert('WRONG');
-                this.style.backgroundColor = '#FEFEFE'
-                // if not correct, fade box out and display "Try Again"
+                this.style.backgroundColor = '#FEFEFE';
+                displayMessage.textContent = 'Try Again';
             }
         });
     }
@@ -56,10 +70,13 @@ let drawFromColors = () => {
 
 let boxes = document.querySelectorAll('.color-box');
 let pickedColorText = document.getElementById('guess-color');
+let newColors = document.getElementById('new-colors');
+let displayMessage = document.getElementById('guess-result');
 
 // give a choice to level
-
+// add new colors button logic
 paintBoxes(boxes);
 boxesListeners(boxes);
 pickedColor = drawFromColors();
+pickedColorRGB = hex2rgb(pickedColor);
 pickedColorText.textContent = pickedColor;
