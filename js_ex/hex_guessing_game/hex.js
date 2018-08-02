@@ -47,6 +47,22 @@ let changeOtherColors = (color) => {
     }
 };
 
+let drawFromColors = () => {
+    return colors[Math.floor(Math.random()*gameModeFactor)];
+};
+
+let hideBottomBoxes = (squares) => {
+    for (let i=3; i< squares.length; i++) {
+        squares[i].style.display = 'none';
+    }
+};
+
+let showBottomBoxes = (squares) => {
+    for (let i=3; i< squares.length; i++) {
+        squares[i].style.display = 'block';
+    }
+};
+
 let boxesListeners = function(squares) {
     for (i=0; i<gameModeFactor; i++) {
         squares[i].addEventListener('click', function() {
@@ -64,19 +80,61 @@ let boxesListeners = function(squares) {
     }
 };
 
-let drawFromColors = () => {
-    return colors[Math.floor(Math.random()*gameModeFactor)];
-};
-
 let boxes = document.querySelectorAll('.color-box');
 let pickedColorText = document.getElementById('guess-color');
 let newColors = document.getElementById('new-colors');
 let displayMessage = document.getElementById('guess-result');
+let pageButtons = document.querySelectorAll('button');
+let hardButton = document.getElementById('hard');
+let easyButton = document.getElementById('easy');
 
-// give a choice to level
-// add new colors button logic
-paintBoxes(boxes);
+hardButton.addEventListener('click', () => {
+    if (!hardButton.classList.contains('checked')) {
+        hardButton.classList.add('checked');
+        easyButton.classList.remove('checked');
+        gameModeFactor = 6;
+        initGame();
+        showBottomBoxes(boxes);
+    }
+});
+
+easyButton.addEventListener('click', () => {
+    if (!easyButton.classList.contains('checked')) {
+        easyButton.classList.add('checked');
+        hardButton.classList.remove('checked');
+        gameModeFactor = 3;
+        initGame();
+        hideBottomBoxes(boxes);
+    }
+});
+
+pageButtons.forEach((btn) => {
+    btn.addEventListener('mouseover', () => {
+        btn.classList.add('over');
+    });
+});
+
+pageButtons.forEach((btn) => {
+    btn.addEventListener('mouseleave', () => {
+        btn.classList.remove('over');
+    });
+});
+
+newColors.addEventListener('click', () => {
+    initGame();
+    this.textContent = 'New colors?';
+    header.style.backgroundColor = '#2CAAAA';
+});
+
+/**
+ * Initialize the game
+ */
+function initGame() {
+    paintBoxes(boxes);
+    pickedColor = drawFromColors();
+    pickedColorRGB = hex2rgb(pickedColor);
+    pickedColorText.textContent = pickedColor;
+}
+
+initGame();
 boxesListeners(boxes);
-pickedColor = drawFromColors();
-pickedColorRGB = hex2rgb(pickedColor);
-pickedColorText.textContent = pickedColor;
