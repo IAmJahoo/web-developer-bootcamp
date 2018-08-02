@@ -136,6 +136,7 @@ function initGame() {
     pickedColor = drawFromColors();
     pickedColorRGB = hex2rgb(pickedColor);
     pickedColorText.textContent = pickedColor;
+    displayMessage.textContent = '';
 }
 
 initGame();
