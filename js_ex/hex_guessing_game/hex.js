@@ -122,7 +122,7 @@ pageButtons.forEach((btn) => {
 
 newColors.addEventListener('click', () => {
     initGame();
-    this.textContent = 'New colors?';
+    newColors.textContent = 'New colors?';
     header.style.backgroundColor = '#2CAAAA';
 });
 
