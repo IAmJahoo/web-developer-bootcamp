@@ -92,6 +92,7 @@ hardButton.addEventListener('click', () => {
     if (!hardButton.classList.contains('checked')) {
         hardButton.classList.add('checked');
         easyButton.classList.remove('checked');
+        newColors.textContent = 'New colors?';
         gameModeFactor = 6;
         initGame();
         showBottomBoxes(boxes);
@@ -102,6 +103,7 @@ easyButton.addEventListener('click', () => {
     if (!easyButton.classList.contains('checked')) {
         easyButton.classList.add('checked');
         hardButton.classList.remove('checked');
+        newColors.textContent = 'New colors?';
         gameModeFactor = 3;
         initGame();
         hideBottomBoxes(boxes);
