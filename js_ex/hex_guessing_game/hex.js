@@ -64,7 +64,7 @@ let showBottomBoxes = (squares) => {
 };
 
 let boxesListeners = function(squares) {
-    for (i=0; i<gameModeFactor; i++) {
+    for (let i=0; i<gameModeFactor; i++) {
         squares[i].addEventListener('click', function() {
             let clickedColor = this.style.backgroundColor;
             if (clickedColor === pickedColorRGB) {
@@ -80,13 +80,13 @@ let boxesListeners = function(squares) {
     }
 };
 
-let boxes = document.querySelectorAll('.color-box');
-let pickedColorText = document.getElementById('guess-color');
-let newColors = document.getElementById('new-colors');
-let displayMessage = document.getElementById('guess-result');
-let pageButtons = document.querySelectorAll('button');
-let hardButton = document.getElementById('hard');
-let easyButton = document.getElementById('easy');
+const boxes = document.querySelectorAll('.color-box');
+const pickedColorText = document.getElementById('guess-color');
+const newColors = document.getElementById('new-colors');
+const displayMessage = document.getElementById('guess-result');
+const pageButtons = document.querySelectorAll('button');
+const hardButton = document.getElementById('hard');
+const easyButton = document.getElementById('easy');
 
 hardButton.addEventListener('click', () => {
     if (!hardButton.classList.contains('checked')) {
