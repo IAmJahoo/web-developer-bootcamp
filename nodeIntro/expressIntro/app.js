@@ -13,7 +13,7 @@ app.get('/bye', (req, res) => {
 
 app.get('*', (req, res) => {
     res.send('Nie ma takiego routa jak ' +req.path.toString() + ' :O')
-})
+});
 
 app.listen(listenPort, () => {
     console.log('Server running on port ' + listenPort)
